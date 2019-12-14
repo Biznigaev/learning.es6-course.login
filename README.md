@@ -10,7 +10,7 @@
 Пример передаваемых данных (ключи в объекте обязательно должны быть такими же как в примере):
 
 ```json
-email: ["denis.m.pcspace@gmail.com](mailto:%22denis.m.pcspace@gmail.com)",
+email: "denis.m.pcspace@gmail.com",
 password: "dmgame12345",
 nickname: "dmgame",
 first_name: "Denis",
