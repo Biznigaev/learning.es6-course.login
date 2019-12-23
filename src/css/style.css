@@ -38,3 +38,13 @@
 .login-greeting-screen .login-greeting-screen-description {
   line-height: 1.4;
 }
+.form-desc_text {
+  font-size: .75rem;
+  margin-top: 15px;
+}
+#signin-field-wrapper {
+  height:350px;
+  overflow-y:auto;
+  overflow-x:hidden;
+  margin-bottom:10px;
+}
