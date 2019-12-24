@@ -1,19 +1,16 @@
-import 'bootstrap/dist/css/bootstrap.css';
-import "js-datepicker/dist/datepicker.min.css";
 import "../css/style.css";
-import datepicker from 'js-datepicker';
+import "./plugins";
 import UI from './config/ui.config';
-import { fieldChecker } from "./helpers/validate";
+import { ExtendedValidation as formValidator } from "./helpers/validate";
 import { showInputError, removeInputError } from './views/form';
-import { signup } from './services/register.service';
-import { login } from './services/auth.service';
+import { login, signup } from "./services/auth.service";
 import { notify } from './views/notifications';
 
+const fieldChecker = new formValidator();
 const { formLogin, formRegister, signinFields, loginFields } = UI;
 const {
   inputCountry,
   inputCity,
-  inputBirthdate,
   inputPassword,
   inputAcceptPolicy
 } = signinFields;
@@ -65,18 +62,6 @@ formRegister.addEventListener('submit', e => {
 		input.addEventListener("focus", () => removeInputError(input))
 	)
 );
-datepicker(inputBirthdate, {
-	formatter: (input, date, instance) =>
-		input.value = date.toLocaleDateString(),
-	onSelect: (instance, date) => {
-		formRegister.dataset["date_of_birth_day"] = date.getDate();
-		formRegister.dataset["date_of_birth_month"] = date.getMonth();
-		formRegister.dataset["date_of_birth_year"] = date.getFullYear();
-	}
-});
-
-// inputPassword
-
 inputCountry.addEventListener("change", e => {
   e.preventDefault();
   inputCity.querySelectorAll(`option[value]`).forEach(option => {
