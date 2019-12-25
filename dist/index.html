@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <title>Document</title>
+  <link href="./style.css" rel="stylesheet"></head>
+  <body>
+    <div class="login-page-wrapp d-flex">
+      <div class="login-form-wrap d-flex align-items-center">
+        <div class="form-card card ml-auto">
+          <div class="card-body">
+            <h4 class="card-title">Please Login</h4>
+            <form name="loginForm">
+              <div class="form-group">
+                <label for="login-email">Email address</label>
+                <input
+                  type="email"
+                  class="form-control"
+				  id="login-email"
+				  name="email"
+                  aria-describedby="emailHelp"
+                  placeholder="Enter email"
+                  data-required="email"
+                  data-invalid-message="Please provide valid email example@example.com"
+                />
+              </div>
+              <div class="form-group">
+                <label for="login-password">Password</label>
+                <input
+				  type="password"
+				  autocomplete="off"
+				  name="password"
+                  class="form-control"
+                  id="login-password"
+                  placeholder="Password"
+                  data-required="password"
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+              <p class="form-desc_text">Not a member? <a href="#" class="toggle-forms">Sign up now</a></p>
+            </form>
+          </div>
+          <div class="card-body d-none">
+            <form name="registerForm">
+				<h4 class="card-title">Create Account</h4>
+				<p class="form-desc_text">Please fill in this for create an account!</p>
+					<div id="signin-field-wrapper">
+					<div class="form-group">
+						<label for="signin-email">Email address</label>
+						<input 
+							type="email" 
+							class="form-control" 
+							id="signin-email" 
+							name="email"
+							aria-describedby="emailHelp" 
+							placeholder="Enter email"
+							data-required="email" 
+							data-invalid-message="Please provide valid email example@example.com" 
+						/>
+					</div>
+					<div class="form-group">
+						<label for="signin-nickname">Think up nickname</label>
+						<input 
+							type="text" 
+							class="form-control" 
+							id="signin-nickname" 
+							name="nickname" 
+							aria-describedby="nicknameHelp" 
+							placeholder="Enter nickname"
+							data-required="nickname" 
+							data-invalid-message="Please provide valid nickname" 
+						/>
+					</div>
+					<div class="row form-group">
+						<div class="col">
+							<label for="signin-email">Password</label>
+							<input 
+								type="password" 
+								class="form-control" 
+								id="signin-password"
+								name="password"
+								autocomplete="off"
+								placeholder="Enter password" 
+								data-required="password"
+								data-invalid-message="Think a more complex password"
+							/>
+						</div>
+						<div class="col">
+							<label for="signin-nickname">Retry password</label>
+							<input 
+								type="password" 
+								class="form-control" 
+								autocomplete="off"
+								id="signin-retry-password"
+								placeholder="Repeat entered password"
+								data-invalid-message="Current repeating not match entered password"
+							/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="signin-firstname">Name</label>
+						<input 
+							type="firstname" 
+							class="form-control" 
+							id="signin-firstname"
+							name="first_name" 
+							aria-describedby="firstnameHelp"
+							placeholder="Enter your name" 
+							data-required="name" 
+							data-invalid-message="Please provide valid firstname" 
+						/>
+					</div>
+					<div class="form-group">
+						<label for="signin-lastname">Lastname</label>
+						<input 
+							type="text" 
+							class="form-control" 
+							id="signin-lastname" 
+							name="last_name"
+							aria-describedby="lastnameHelp"
+							placeholder="Enter lastname" 
+							data-required="name" 
+							data-invalid-message="Please provide valid lastname" 
+						/>
+					</div>
+					<div class="row form-group">
+						<div class="col">
+							<label for="signin-birth">Date of birth</label>
+							<input 
+								type="text" 
+								id="signin-birth" 
+								class="form-control calendar" 
+								name="birthday"
+								readonly
+								placeholder="Enter your birthday"
+								data-required="birthday"
+								data-invalid-message="For persons over 18 yo"
+							/>
+						</div>
+						<div class="col">
+							<label for="signin-phone">Phone</label>
+							<input
+								type="text" 
+								id="signin-phone" 
+								class="form-control" 
+								name="phone" 
+								placeholder="Enter your phone"
+								data-required="phone"
+								data-invalid-message="Enter alphanumeric number"
+							/>
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="form-group col-md-5">
+							<label for="country">Country</label>
+							<input 
+								type="text" 
+								id="signin-country" 
+								name="country" 
+								class="form-control" 
+								placeholder="Choose country"
+								data-required="empty" 
+								data-invalid-message="Choose your country"
+							/>
+						</div>
+						<div class="form-group col">
+							<label for="city">City</label>
+							<input 
+								type="text" 
+								id="signin-city" 
+								name="city" 
+								class="form-control" 
+								placeholder="Choose city" 
+								data-required="empty" 
+								data-invalid-message="Choose your city"
+							/>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="custom-control custom-radio custom-control-inline">
+							<input 
+								class="custom-control-input" 
+								type="radio" 
+								name="gender_orientation" 
+								id="signin-gender_orientation-m" 
+								value="male" 
+								checked 
+							/>
+							<label class="custom-control-label" for="signin-gender_orientation-m">
+								Male
+							</label>
+						</div>
+						<div class="custom-control custom-radio custom-control-inline">
+							<input 
+								class="custom-control-input" 
+								type="radio" 
+								name="gender_orientation" 
+								id="signin-gender_orientation-f" 
+								value="female"
+							/>
+							<label class="custom-control-label" for="signin-gender_orientation-f">
+							Female
+							</label>
+						</div>
+					</div>
+					<div class="form-group custom-control custom-checkbox">
+						<input 
+							type="checkbox" 
+							class="custom-control-input" 
+							id="signin-acceptPolicy"
+							data-invalid-message="Consent for data processing is required"
+						/>
+						<label class="custom-control-label" for="signin-acceptPolicy">I accept the <a href="#">Terms of Use</a> & <a href="#">Privacy Policy</a></label>
+					</div>
+				</div>
+				<button 
+					type="submit" 
+					class="btn btn-outline-primary"
+				>Sign Up</button>
+				<p class="form-desc_text d-inline">or <a href="#" class="toggle-forms">Login</a></p>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- /.login-form-wrap -->
+      <div class="login-greeting-screen d-flex align-items-center">
+        <div class="login-greeting-screen-text">
+          <h1 class="login-greeting-screen-title">Welcome to my app</h1>
+          <p class="login-greeting-screen-description">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores
+            inventore non accusantium earum, illo dolores reprehenderit laborum
+            ratione quos doloribus repellat eligendi deleniti. Ipsum voluptate
+            ipsa exercitationem eaque totam. A.
+          </p>
+        </div>
+      </div>
+      <!-- /.login-greeting-screen -->
+    </div>
+    <!-- /.login-page-wrapp -->
+  <script type="text/javascript" src="polyfill.0b9a1772e7bd2aa2f6aa.js"></script><script type="text/javascript" src="app.0b9a1772e7bd2aa2f6aa.js"></script></body>
+</html>
