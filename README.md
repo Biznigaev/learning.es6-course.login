@@ -52,3 +52,6 @@ date_of_birth_year: 1989,
 **В качестве самих эелементов можете использовать нативные элементы из html**
 
 **Или можете взять из jQuery UI элемент Autocomplete**
+
+
+Demo доступно по [ссылке](https://biznigaev.github.io/learning.es6-course.login/dist/)
