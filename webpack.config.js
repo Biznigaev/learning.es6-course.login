@@ -24,14 +24,19 @@ module.exports = {
   },
   module: {
     // Для того, чтобы трансформировать файл, используются специальные утилиты - загрузчики (loaders).
-    //Для любых настроек модуля вебпак используется поле module.
-    //Массив rules  внутри объекта module определяет список правил для загрузчиков.
+    // Для любых настроек модуля вебпак используется поле module.
+    // Массив rules  внутри объекта module определяет список правил для загрузчиков.
     rules: [
       {
         use: {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env'],
+            plugins: [
+              [
+                '@babel/plugin-proposal-class-properties'
+              ]
+            ]
           },
         },
         test: /\.js$/,
