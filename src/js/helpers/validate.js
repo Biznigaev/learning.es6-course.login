@@ -1,6 +1,6 @@
+import store from "../store/countries";
 /***
- * @todo: оформить получение городов и стран через сервис и их последующую валидацию
- * @todo: получить коды стран из стора стран
+ * @todo: при проверке телефона получить коды стран из стора стран
  */
 export class ExtendedValidation {
 	static instance;
@@ -49,17 +49,21 @@ export class ExtendedValidation {
 	set phoneUtil(_phoneUtil) {
 		this.phoneUtil = _phoneUtil;
 	}
-	/**
-	 * @todo: проверить, что значение содержится в store-e стран
-	 */
 	testCountry(value) {
-		return value != "Choose...";
+		const country = store.selectedCountry;
+		return (
+			value.length > 0 &&
+			country  !== false &&
+			country.name === value
+		);
 	}
-	/**
-	 * @todo: проверить, что значение содержится в store-e городов выбранной страны
-	 */
 	testCity(value) {
-		return value != "Choose...";
+		const country = store.selectedCountry;
+		return (
+			value.length > 0 &&
+			country !== false &&
+			country.findCity(value) !== false
+		);
 	}
 	getAge(dateString) {
 		const today = new Date();

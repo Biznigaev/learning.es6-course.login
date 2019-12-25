@@ -23,33 +23,42 @@ class Countries {
     get countries() {
         return this.store;
     }
+    get selectedCountry() {
+        const selected = Object.entries(store.countries)
+            .find(([index, country]) => country.selected === true)
+
+        if (selected) {
+            return selected[1];
+        }
+        return false;
+    }
 }
 
 /**
  * @property {Number} index
  * @property {String} name
  * @property {Boolean} selected
- * @property {Array<City>} _cities
+ * @property {Array<City>} cities
  */
 class Country {
     index;
     name;
     selected;
-    _cities;
+    cities;
 
     constructor(_index, _name, _selected = false) {
         this.index = _index;
         this.name = _name;
         this.selected = _selected;
-        this._cities = [];
+        this.cities = [];
     }
 
-    async fetchCities() {
-        const cities = await new Promise((resolve, reject) => 
+    fetchCities() {
+        return new Promise((resolve, reject) => 
             resolve(getCities(this.index))
+        ).then(data => 
+            this.cities = this.serializeCities(data)
         );
-        this._cities = this.serializeCities(cities);
-        return this._cities;
     }
     serializeCities(cities) {
         return cities.reduce((acc, cityName) => {
@@ -59,14 +68,21 @@ class Country {
             return acc;
         }, []);
     }
-    get cities() {
-        if (!this._cities.length &&
-            this.selected === true) {
-            this.fetchCities().then(cities => {
-                console.log(cities);
-            });
-        }
-        return this._cities;
+    getCities() {
+        return new Promise((resolve, reject) => {
+            if (!this.cities.length &&
+                this.selected === true) {
+                resolve(this.fetchCities());
+            } else {
+                resolve(this.cities);
+            }
+        });
+    }
+    findCity(cityName) {
+        return this.cities.find(city => city.name == cityName) || false;
+    }
+    get selectedCity() {
+        return this.cities.find(city => city.selected === true) || false; 
     }
 }
 

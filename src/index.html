@@ -156,46 +156,27 @@
 					<div class="form-row">
 						<div class="form-group col-md-5">
 							<label for="country">Country</label>
-							<input type="text" id="country" class="form-control" placeholder="Choose country" />
+							<input 
+								type="text" 
+								id="signin-country" 
+								name="country" 
+								class="form-control" 
+								placeholder="Choose country"
+								data-required="empty" 
+								data-invalid-message="Choose your country"
+							/>
 						</div>
 						<div class="form-group col">
 							<label for="city">City</label>
-							<input type="text" id="city" class="form-control" placeholder="Choose city" />
-						</div>
-					</div>
-					<div class="form-row">
-						<div class="form-group col-md-5">
-							<label for="signin-country">Country</label>
-							<select 
-								id="signin-country" 
-								name="country" 
-								class="form-control"
-								data-required="empty" 
-								data-invalid-message="Choose your country"
-							>
-								<option selected>Choose...</option>
-								<option data-code="RU" value="Russia">Russia</option>
-								<option data-code="UA" value="Ukraine">Ukraine</option>
-								<option data-code="US" value="America">America</option>
-							</select>
-						</div>
-						<div class="form-group col">
-							<label for="signin-city">City</label>
-							<select 
+							<input 
+								type="text" 
 								id="signin-city" 
 								name="city" 
-								class="form-control"
+								class="form-control" 
+								placeholder="Choose city" 
 								data-required="empty" 
 								data-invalid-message="Choose your city"
-							>
-								<option selected>Choose...</option>
-								<option data-country="Russia" value="Moscow">Moscow</option>
-								<option data-country="Russia" value="Saint-Petersburg">Saint-Petersburg</option>
-								<option data-country="Ukraine" value="Kiev">Kiev</option>
-								<option data-country="Ukraine" value="Kharkiv">Kharkiv</option>
-								<option data-country="America" value="New York">New York</option>
-								<option data-country="America" value="Los Angeles">Los Angeles</option>
-							</select>
+							/>
 						</div>
 					</div>
 					<div class="form-group">

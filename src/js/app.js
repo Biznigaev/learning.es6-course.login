@@ -8,12 +8,7 @@ import { notify } from './views/notifications';
 
 const fieldChecker = new formValidator();
 const { formLogin, formRegister, signinFields, loginFields } = UI;
-const {
-  inputCountry,
-  inputCity,
-  inputPassword,
-  inputAcceptPolicy
-} = signinFields;
+const { inputPassword, inputAcceptPolicy } = signinFields;
 const inputRetryPassword = document.getElementById("signin-retry-password");
 // Events
 document.querySelectorAll('.toggle-forms').forEach(input => {
@@ -62,27 +57,7 @@ formRegister.addEventListener('submit', e => {
 		input.addEventListener("focus", () => removeInputError(input))
 	)
 );
-inputCountry.addEventListener("change", e => {
-  e.preventDefault();
-  inputCity.querySelectorAll(`option[value]`).forEach(option => {
-    if (option.dataset["country"] == e.target.value) {
-      option.removeAttribute("disabled");
-    } else {
-      if (option.selected === true) {
-        option.parentElement.selectedIndex = 0;
-      }
-      option.setAttribute("disabled", true);
-    }
-  });
-});
-inputCity.addEventListener("change", e => {
-  e.preventDefault();
-  const option =
-    e.target.querySelector(`option[value="${e.target.value}"]`) || false;
-  if (option !== false) {
-    inputCountry.value = option.dataset["country"];
-  }
-});
+
 // Handlers
 async function onLoginSubmit() {
 	const isValidForm = Object.entries(loginFields).every(([key, input]) => {
